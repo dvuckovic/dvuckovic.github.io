@@ -73,4 +73,22 @@ describe('Homepage', () => {
             cy.get(item).should('have.attr', 'href', itemLink).contains(itemConfig.text);
         });
     });
+
+    it('has email modal', () => {
+        cy.get('a[href="#email-modal"]').scrollIntoView().click({ force: true });
+        cy.get('div#email-modal').should('be.visible');
+        cy.get('a.NavLink--PublicKey').each((item, index) => {
+            let link = themeConfig.publicKeys.smime;
+            if (index === 1) link = themeConfig.publicKeys.pgp;
+            cy.get(item).should('have.attr', 'href', link);
+        });
+
+        // To properly wait for the modal to close, we have to pipe the click and continue clicking until it works.
+        //   In some test runs, the runner will try to click 17 times on the button, until it works!
+        //   More info here: https://www.cypress.io/blog/2019/01/22/when-can-the-test-click/
+        const click = $el => $el.click();
+        cy.get('div#email-modal .btn-primary').pipe(click).should('not.be.visible').then(() => {
+            cy.get('div#email-modal').should('not.be.visible');
+        });
+    });
 });

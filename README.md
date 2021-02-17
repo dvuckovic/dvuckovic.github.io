@@ -1,6 +1,6 @@
-# vuepress-blog-template
+# dvuckovic.github.io
 
-A VuePress blog template for static websites.
+VuePress instance for the website [Dusan’s Space](https://dvuckovic.com).
 
 ## Installation
 

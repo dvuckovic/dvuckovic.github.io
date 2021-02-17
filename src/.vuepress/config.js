@@ -8,8 +8,8 @@ const env = dotenv.config();
 dotenvExpand(env);
 
 module.exports = {
-    title: 'Blog Title',
-    description: 'Blog description.',
+    title: 'Dusan’s Space',
+    description: 'This is fine.',
     base: '/',
     dest: 'dist',
     head: [
@@ -18,6 +18,28 @@ module.exports = {
             {
                 rel: 'icon',
                 href: '/favicon.ico',
+            },
+        ],
+        [
+            'meta',
+            {
+                name: 'theme-color',
+                content: '#ff7700',
+            },
+        ],
+        [
+            'link',
+            {
+                rel: 'preconnect',
+                href: 'https://fonts.gstatic.com',
+            },
+        ],
+        [
+            'link',
+            {
+                rel: 'stylesheet',
+                // eslint-disable-next-line max-len
+                href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather+Sans:ital,wght@0,600;1,600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap',
             },
         ],
         [
@@ -47,30 +69,35 @@ module.exports = {
     },
     themeConfig: {
         env: env.parsed,
-        logo: 'https://vuepress.vuejs.org/hero.png',
-        coverHome: 'https://source.unsplash.com/random/2048x1024',
-        coverError: 'https://source.unsplash.com/random/2048x1024',
+        logo: 'https://cdn.dvuckovic.com/images/avatar.png',
+        coverHome: 'https://cdn.dvuckovic.com/images/lego_stormtrooper.jpg',
+        coverError: 'https://cdn.dvuckovic.com/images/stormtroopers.jpg',
         dateFormat: 'YYYY-MM-DD',
         errorTitle: '404',
-        errorDescription: 'Not Found',
-        ga: false,
+        errorDescription: 'Tear this ship apart until you find those plans!',
+        ga: true,
         globalPagination: {
-            lengthPerPage: 4,
+            lengthPerPage: 9,
         },
         sitemap: {
-            // hostname: 'https://example.com',
+            hostname: 'https://dvuckovic.com',
         },
         feed: {
             path: '/rss.xml',
-            canonical_base: 'https://example.com',
+            canonical_base: 'https://dvuckovic.com',
             posts_directories: [ '/posts/' ],
             sort: entries => lodash.reverse(lodash.sortBy(entries, 'date')),
         },
         contact: [
             {
+                type: 'instagram',
+                text: 'Instagram',
+                link: 'https://instagram.com/dvuckovic82',
+            },
+            {
                 type: 'github',
-                text: 'Github',
-                link: 'https://github.com',
+                text: 'GitHub',
+                link: 'https://github.com/dvuckovic',
             },
         ],
         smoothScroll: true,
@@ -122,21 +149,42 @@ module.exports = {
                 link: '/tag/post/',
             },
             {
-                text: 'Static',
-                link: '/static-page',
+                text: 'Projects',
+                link: '/tag/project/',
+            },
+            {
+                text: 'Photos',
+                link: '/tag/photo/',
+            },
+            {
+                text: 'Panoramas',
+                link: '/tag/panorama/',
             },
         ],
         footer: {
             copyright: [
                 {
-                    text: `© ${new Date().getFullYear()}`,
+                    text: `© ${new Date().getFullYear()} dvuckovic.com`,
                     link: '/',
                 },
             ],
             links: [
                 {
+                    text: 'Email',
+                    link: '#email-modal',
+                    toggle: 'modal',
+                },
+                {
+                    text: 'Resume',
+                    link: 'https://dvuckovic.com/resume/',
+                },
+                {
+                    text: 'Privacy',
+                    link: '/privacy-policy.md',
+                },
+                {
                     text: 'Github',
-                    link: 'https://github.com',
+                    link: 'https://github.com/dvuckovic',
                 },
             ],
             syndication: [
@@ -145,7 +193,21 @@ module.exports = {
                     link: 'https://vuepress.vuejs.org',
                     image: 'https://img.shields.io/badge/powered_by-VuePress-3eaf7c?logo=Vue.js',
                 },
+                {
+                    text: 'Secured by Cloudflare',
+                    link: 'https://www.cloudflare.com',
+                    image: 'https://img.shields.io/badge/secured_by-Cloudflare-f38020?logo=cloudflare',
+                },
+                {
+                    text: 'Licensed as WTFPL',
+                    link: 'http://www.wtfpl.net',
+                    image: 'https://img.shields.io/badge/license-WTFPL-white',
+                },
             ],
+        },
+        publicKeys: {
+            smime: 'https://cdn.dvuckovic.com/downloads/dvuckovic.crt',
+            pgp: 'https://cdn.dvuckovic.com/downloads/dvuckovic.pub',
         },
     },
 };

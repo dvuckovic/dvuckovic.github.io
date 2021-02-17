@@ -231,7 +231,7 @@ export default {
         }
 
         &__Summary {
-            font-family: 'Garamond', serif;
+            font-family: 'Merriweather', serif;
             font-size: 1.125rem;
             color: $spanish;
         }
@@ -245,7 +245,7 @@ export default {
     border-radius: 4px;
 
     a {
-        font-family: 'Helvetica', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-size: 0.75rem;
         font-weight: 500;
         text-transform: uppercase;

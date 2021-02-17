@@ -7,10 +7,11 @@
                 </p>
                 <p>
                     <small>
-                        We suggest you try to use the search box, or go to the <NavLink link="/">home page</NavLink>
-                        instead.
+                        While our numerous army of <em>Imperial Stormtroopers</em> continues the search for this
+                        rebellious page, might we suggest using our search form? Thanks.
                     </small>
                 </p>
+                <small>Or you can go to the <NavLink link="/">home page</NavLink> instead.</small>
             </section>
         </div>
     </div>
@@ -19,7 +20,7 @@
 <style lang="scss">
 .NotFound {
     &__Content {
-        font-family: 'Garamond', serif;
+        font-family: 'Merriweather', serif;
         font-size: 1rem;
 
         @media (min-width: 768px) {

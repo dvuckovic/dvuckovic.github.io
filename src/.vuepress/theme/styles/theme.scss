@@ -7,7 +7,7 @@ html {
 body {
     color: $light;
     background: $jet;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-style: normal;
     letter-spacing: 0;
@@ -68,7 +68,7 @@ h5,
 h6 {
     font-weight: 600;
     text-rendering: optimizeLegibility;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 @media (min-width: 992px) {
@@ -85,7 +85,7 @@ h6 {
         border-radius: 0.25em;
 
         button {
-            font-family: 'Helvetica', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 1rem;
             font-weight: 500;
             text-transform: uppercase;
@@ -122,7 +122,7 @@ h6 {
         background: $jet;
 
         p {
-            font-family: 'Garamond', serif;
+            font-family: 'Merriweather', serif;
             font-size: 1rem;
 
             &:last-child {

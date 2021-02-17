@@ -10,7 +10,7 @@ describe('Navigation', () => {
     it('navigates primary items', () => {
         themeConfig.nav.forEach((item) => {
             cy.contains('a', item.text).click();
-            cy.location('pathname').should('contain', item.link);
+            cy.location('pathname').should('eq', item.link);
         });
     });
 

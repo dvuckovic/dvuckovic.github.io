@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to Github Pages
 
 # Controls when the action will run.
 #   Triggers the workflow on push events, but only for the main branch.
@@ -53,11 +53,11 @@ jobs:
       if: success()
       uses: crazy-max/ghaction-github-pages@v2
       with:
-        author: Github Workflow <noreply@github.com>
+        author: Dusan Vuckovic <dusan@dvuckovic.com>
         commit_message: Deployed to Github Pages.
-        fqdn: example.com
+        fqdn: dvuckovic.com
         build_dir: dist/
-        repo: username/username.github.io
-        target_branch: main
+        repo: dvuckovic/dvuckovic.github.io
+        target_branch: gh-pages
       env:
         GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}

@@ -51,7 +51,7 @@ export default {
                     position: 'right',
                     align: 'end',
                     labels: {
-                        fontFamily: '"Helvetica", sans-serif',
+                        fontFamily: '"Inter", sans-serif',
                         fontColor: '#888',
                         fontSize: 13,
                         usePointStyle: true,

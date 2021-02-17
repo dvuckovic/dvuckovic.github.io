@@ -294,12 +294,49 @@ export default {
 
             &:focus,
             &:hover {
-                color: $primary;
+                color: $white;
             }
         }
 
         &:hover {
-            color: $primary;
+            color: $white;
+
+            &:before {
+                right: 8px;
+
+                @media (max-width: 576px) {
+                    & {
+                        right: 0;
+                    }
+                }
+            }
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            right: 100%;
+            bottom: 4px;
+            left: 8px;
+            height: 1px;
+            background: $primary;
+            transition: all .35s ease-in-out;
+
+            @at-root .router-link-active#{&} {
+                right: 8px;
+
+                @media (max-width: 576px) {
+                    & {
+                        right: 0;
+                    }
+                }
+            }
+
+            @media (max-width: 576px) {
+                & {
+                    left: 0;
+                }
+            }
         }
     }
 }

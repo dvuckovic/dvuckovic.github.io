@@ -1,7 +1,7 @@
 {
-    "name": "vuepress-blog-template",
+    "name": "dvuckovic.github.io",
     "version": "2021.0.0",
-    "description": "Blog Title",
+    "description": "Dusan’s Space",
     "scripts": {
         "postinstall": "scripts/postinstall.sh",
         "dev": "vuepress dev src",
@@ -19,12 +19,11 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/dvuckovic/vuepress-blog-template.git"
+        "url": "git+https://github.com/dvuckovic/dvuckovic.github.io.git"
     },
     "keywords": [
         "vuepress",
-        "blog",
-        "template"
+        "dvuckovic"
     ],
     "author": "Dusan Vuckovic <dusan@dvuckovic.com>",
     "license": "WTFPL",

@@ -180,7 +180,7 @@ export default {
 
     &__Summary {
         color: $spanish;
-        font-family: 'Garamond', serif;
+        font-family: 'Merriweather', serif;
         font-weight: 300;
         font-size: 1.125rem;
 
@@ -222,7 +222,7 @@ export default {
 
     &__Content {
         padding-bottom: 50px;
-        font-family: 'Garamond', serif;
+        font-family: 'Merriweather', serif;
         font-size: 1rem;
 
         @media (min-width: 768px) {
@@ -357,7 +357,7 @@ export default {
             width: auto;
             border-spacing: 0;
             border-collapse: collapse;
-            font-family: 'Helvetica', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-weight: 500;
             vertical-align: top;
 

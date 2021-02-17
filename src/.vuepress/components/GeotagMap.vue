@@ -186,7 +186,7 @@ export default {
     }
 
     .btn {
-        font-family: 'Helvetica', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-size: 0.75rem;
         font-weight: 500;
         text-transform: uppercase;

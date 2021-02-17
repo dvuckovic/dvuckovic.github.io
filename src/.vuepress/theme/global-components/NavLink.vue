@@ -68,7 +68,22 @@ export default {
         font-weight: 500;
 
         &:hover {
-            color: $primary;
+            color: $white;
+
+            &:before {
+                right: 12px;
+            }
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            right: 100%;
+            bottom: 0px;
+            left: 12px;
+            height: 1px;
+            background: $primary;
+            transition: all .35s ease-in-out;
         }
     }
 }
