@@ -1,5 +1,9 @@
 # dvuckovic.github.io
 
+[![Workflow Status](https://img.shields.io/github/workflow/status/dvuckovic/dvuckovic.github.io/Deploy%20to%20Github%20Pages?label=deploy)](https://github.com/dvuckovic/dvuckovic.github.io/actions?query=workflow%3A%22Deploy+to+Github+Pages%22)
+[![Powered by VuePress](https://img.shields.io/github/package-json/dependency-version/dvuckovic/dvuckovic.github.io/dev/vuepress)](https://vuepress.vuejs.org)
+![License](https://img.shields.io/github/package-json/license/dvuckovic/dvuckovic.github.io?color=white)
+
 VuePress instance for the website [Dusan’s Space](https://dvuckovic.com).
 
 ## Installation
