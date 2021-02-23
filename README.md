@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/github/workflow/status/dvuckovic/dvuckovic.github.io/Test%20&%20Deploy)](https://github.com/dvuckovic/dvuckovic.github.io/actions/workflows/checks.yml)
 [![Powered by VuePress](https://img.shields.io/github/package-json/dependency-version/dvuckovic/dvuckovic.github.io/dev/vuepress)](https://vuepress.vuejs.org)
-![License](https://img.shields.io/github/package-json/license/dvuckovic/dvuckovic.github.io?color=white)
+[![License](https://img.shields.io/github/package-json/license/dvuckovic/dvuckovic.github.io?color=white)](http://www.wtfpl.net/)
 
 VuePress instance for the website [Dusan’s Space](https://dvuckovic.com).
 
