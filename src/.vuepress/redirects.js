@@ -830,4 +830,8 @@ export default [
         from: '/photos/friends',
         to: '/tag/photo',
     },
+    {
+        from: '/ip.php',
+        to: '/ip.html',
+    },
 ];
