@@ -1,3 +1,8 @@
+---
+title: Privacy Policy
+summary: Data protection agreement for this website
+---
+
 # Privacy Policy
 
 At _dvuckovic.com_ (“website”) one of my main priorities is the privacy of you — my visitors. This Privacy Policy document outlines types of information that is collected and recorded by the website and how is it used.

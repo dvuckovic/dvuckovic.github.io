@@ -78,6 +78,7 @@ module.exports = {
         errorTitle: '404',
         errorDescription: 'Tear this ship apart until you find those plans!',
         ga: true,
+        seo: true,
         globalPagination: {
             lengthPerPage: 9,
         },
