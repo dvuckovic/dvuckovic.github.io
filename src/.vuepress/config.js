@@ -167,7 +167,7 @@ module.exports = {
         footer: {
             copyright: [
                 {
-                    text: `© ${new Date().getFullYear()} dvuckovic.com`,
+                    text: `© ${new Date().getFullYear()} Dusan Vuckovic`,
                     link: '/',
                 },
             ],
