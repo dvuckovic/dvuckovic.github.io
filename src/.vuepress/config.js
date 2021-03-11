@@ -157,6 +157,12 @@ module.exports = {
                 link: '/tag/panorama/',
             },
         ],
+        emailModal: {
+            title: 'Hey there!',
+            // eslint-disable-next-line max-len
+            body: '<p>The best way to get in touch with me directly is to drop me an email.</p>\n<p>My email address is my <strong>given name</strong> at this website.</p>\n<p><em>If you want to send me a secure message, you can get <a href="https://cdn.dvuckovic.com/downloads/dvuckovic.crt" class="NavLink NavLink--PublicKey" download>my S/MIME certificate</a>.</em></p><p><small><em>Or, if you prefer PGP, get <a href="https://cdn.dvuckovic.com/downloads/dvuckovic.pub" class="NavLink NavLink--PublicKey" download>my public key</a>.</em></small></p>',
+            button: 'Got it!',
+        },
         footer: {
             copyright: [
                 {
@@ -200,10 +206,6 @@ module.exports = {
                     image: 'https://img.shields.io/badge/license-WTFPL-white',
                 },
             ],
-        },
-        publicKeys: {
-            smime: 'https://cdn.dvuckovic.com/downloads/dvuckovic.crt',
-            pgp: 'https://cdn.dvuckovic.com/downloads/dvuckovic.pub',
         },
     },
 };

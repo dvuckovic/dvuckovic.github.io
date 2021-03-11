@@ -77,10 +77,13 @@ describe('Homepage', () => {
     it('has email modal', () => {
         cy.get('a[href="#email-modal"]').scrollIntoView().click({ force: true });
         cy.get('div#email-modal').should('be.visible');
-        cy.get('a.NavLink--PublicKey').each((item, index) => {
-            let link = themeConfig.publicKeys.smime;
-            if (index === 1) link = themeConfig.publicKeys.pgp;
-            cy.get(item).should('have.attr', 'href', link);
+        cy.get('div.modal-header').contains('h2', themeConfig.emailModal.title);
+        cy.get('div.modal-footer button').contains(themeConfig.emailModal.button);
+        cy.get('div.modal-body a.NavLink--PublicKey').should('have.length', 2);
+
+        const strippedBody = themeConfig.emailModal.body.replace(/(<([^>]+)>)/gi, '');
+        strippedBody.split('\n').forEach((bodyLine) => {
+            cy.get('div.modal-body').contains(bodyLine);
         });
 
         // To properly wait for the modal to close, we have to pipe the click and continue clicking until it works.
