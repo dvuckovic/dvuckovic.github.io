@@ -3,8 +3,6 @@ title: Rome 2014
 image: https://cdn.dvuckovic.com/photos/rome-14/_MG_8460_1_2.jpg
 summary: 'December trip to the truly Eternal City: Rome, Italy'
 date: 2014-12-25
-sticky: true
-weight: 9
 tags:
   - photo
   - digital

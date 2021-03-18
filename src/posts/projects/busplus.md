@@ -3,8 +3,6 @@ title: BusPlus
 image: https://cdn.dvuckovic.com/projects/busplus/map.jpg
 summary: Small Android app for mass transit system in Belgrade that shows how far is the next bus from your station
 date: 2012-03-07
-sticky: true
-weight: 4
 tags:
   - project
   - android

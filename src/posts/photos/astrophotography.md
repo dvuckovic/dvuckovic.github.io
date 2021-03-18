@@ -3,8 +3,6 @@ title: Astrophotography
 image: https://cdn.dvuckovic.com/photos/astrophotography/duca-m31.jpg
 summary: Astronomical photos made using amateur and custom made equipment
 date: 2015-07-19
-sticky: true
-weight: 5
 tags:
   - photo
   - digital

@@ -3,8 +3,6 @@ title: A year of weather statistics for Belgrade
 image: https://cdn.dvuckovic.com/posts/mammatus_header.jpg
 summary: Visual analysis of the collected weather dataset
 date: 2012-07-24
-sticky: true
-weight: 6
 tags:
   - post
   - meteorology

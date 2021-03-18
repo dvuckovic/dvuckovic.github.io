@@ -3,8 +3,6 @@ title: Setup S/MIME Encryption for Gmail
 image: https://cdn.dvuckovic.com/posts/smime-certificates.jpg
 summary: We got nothing to hide, but why not?
 date: 2020-12-22
-sticky: true
-weight: 7
 tags:
   - post
   - encryption
