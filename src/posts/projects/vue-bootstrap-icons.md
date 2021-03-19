@@ -29,7 +29,10 @@ For sure, this is the best option, but only when you can afford it. Again, what 
 
 ## NPM Package
 
-Naturally, I decided to create my own component, and try to package and publish it to the [NPM](https://www.npmjs.com) at the same time, so it can easily be used across different projects.
+Naturally, I decided to create my own component, and try to package and publish it to the [NPM](https://www.npmjs.com) at the same time, so it can easily be used across different projects:
+
+* [Vue 2](https://www.npmjs.com/package/@dvuckovic/vue-bootstrap-icons)
+* [Vue 3](https://www.npmjs.com/package/@dvuckovic/vue3-bootstrap-icons)
 
 ### Install
 
@@ -37,11 +40,13 @@ To install the library, you can execute the following command in your project fo
 
 ```sh
 npm install --save-prod @dvuckovic/vue-bootstrap-icons
+# or
+npm install --save-prod @dvuckovic/vue3-bootstrap-icons
 ```
 
 ### Usage
 
-Before the use, register it either globally or locally:
+Before the use, register the component either globally or locally in Vue 2:
 
 ```js
 import Vue from 'vue';
@@ -60,6 +65,32 @@ export default {
 };
 ```
 
+For Vue 3, the registration is slightly different:
+
+```js
+import Vue from 'vue';
+import BootstrapIcon from '@dvuckovic/vue3-bootstrap-icons';
+
+const app = Vue.createApp({});
+
+// Global component registration.
+app.component('BootstrapIcon', BootstrapIcon);
+
+app.mount('#app);
+
+// Or...
+
+import { defineComponent } from 'vue';
+import BootstrapIcon from '@dvuckovic/vue3-bootstrap-icons';
+
+export default defineComponent({
+    components: {
+        // Local component registration.
+        BootstrapIcon,
+    },
+});
+```
+
 Then, simply include the following code in the template:
 
 ```vue live
@@ -75,10 +106,11 @@ Above I included only some props, for a full list of possibilities you can check
 
 ### Problems and New Features
 
-If you find any problems or want to propose new features, feel free to submit [an issue](https://github.com/dvuckovic/vue-bootstrap-icons/issues) or [a pull request](https://github.com/dvuckovic/vue-bootstrap-icons/pulls) on Github.
+If you find any problems or want to propose new features, feel free to submit an issue a pull request on Github. Note that there are two flavors of the package, make sure to cater to both:
 
-At the moment, the only plan I have is to update the package for Vue 3 compatibility, but there’s no rush ATM.
+* [Vue 2](https://github.com/dvuckovic/vue-bootstrap-icons)
+* [Vue 3](https://github.com/dvuckovic/vue3-bootstrap-icons)
 
 ## Source Code
 
-Complete [source code](https://github.com/dvuckovic/vue-bootstrap-icons) for this component was written in Vue.js 2 and bundled via [rollup](https://vuejs.org/v2/cookbook/packaging-sfc-for-npm.html). Source code is released under the [WTFPL license](http://www.wtfpl.net/) and available via [NPM](https://www.npmjs.com/package/@dvuckovic/vue-bootstrap-icons).
+Complete source code for this component was written in Vue.js and bundled via [rollup](https://vuejs.org/v2/cookbook/packaging-sfc-for-npm.html). Source code is released under the [WTFPL license](http://www.wtfpl.net/).
