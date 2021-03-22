@@ -178,7 +178,8 @@ module.exports = {
                 },
                 {
                     text: 'Resume',
-                    link: 'https://dvuckovic.com/resume/',
+                    link: 'https://cdn.dvuckovic.com/downloads/dvuckovic.pdf',
+                    rel: 'nofollow',
                 },
                 {
                     text: 'Privacy',

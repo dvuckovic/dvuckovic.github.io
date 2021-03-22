@@ -834,4 +834,8 @@ export default [
         from: '/ip.php',
         to: '/ip.html',
     },
+    {
+        from: '/resume/',
+        to: 'https://cdn.dvuckovic.com/downloads/dvuckovic.pdf',
+    },
 ];
