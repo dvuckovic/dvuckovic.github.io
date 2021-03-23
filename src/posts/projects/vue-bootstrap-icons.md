@@ -31,8 +31,8 @@ For sure, this is the best option, but only when you can afford it. Again, what 
 
 Naturally, I decided to create my own component, and try to package and publish it to the [NPM](https://www.npmjs.com) at the same time, so it can easily be used across different projects. The results can be found in two packages, for each Vue flavor of your choice:
 
-* [Vue 2](https://www.npmjs.com/package/@dvuckovic/vue-bootstrap-icons)
-* [Vue 3](https://www.npmjs.com/package/@dvuckovic/vue3-bootstrap-icons)
+* [@dvuckovic/vue-bootstrap-icons](https://www.npmjs.com/package/@dvuckovic/vue-bootstrap-icons) (Vue 2)
+* [@dvuckovic/vue3-bootstrap-icons](https://www.npmjs.com/package/@dvuckovic/vue3-bootstrap-icons) (Vue 3)
 
 ### Install
 
@@ -104,12 +104,14 @@ Icons are rendered according to the name passed via the `icon` prop, you can con
 
 Above I included only some props, for a full list of possibilities you can check out [the readme file](https://github.com/dvuckovic/vue-bootstrap-icons#props). Feel free to play around with the example above, it’s _live_ code!
 
+The code above assumes normal ES module environment, but for more options like SSR & IIFE make sure to check the readme too.
+
 ### Problems and New Features
 
 If you find any problems or want to propose new features, feel free to submit an issue or a pull request on Github. Note that there are two flavors of the package, make sure to cater to both:
 
-* [Vue 2](https://github.com/dvuckovic/vue-bootstrap-icons)
-* [Vue 3](https://github.com/dvuckovic/vue3-bootstrap-icons)
+* [vue-bootstrap-icons](https://github.com/dvuckovic/vue-bootstrap-icons)
+* [vue3-bootstrap-icons](https://github.com/dvuckovic/vue3-bootstrap-icons)
 
 ## Source Code
 
