@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('Object VR', () => {
     it('renders object VR', () => {
         cy.visit('/2011/03/21/panoramic-head-v2/');

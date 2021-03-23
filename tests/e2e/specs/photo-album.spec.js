@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('Photo Album', () => {
     it('renders photo album', () => {
         cy.visit('/2014/12/25/rome-14/');
