@@ -33,10 +33,12 @@ jobs:
       env:
         GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
         GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
+        GA4_MEASUREMENT_ID: ${{ secrets.GA4_MEASUREMENT_ID }}
         OBJECT2VR_PLAYER: ${{ secrets.OBJECT2VR_PLAYER }}
       run: |
         echo GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY > .env
         echo GOOGLE_ANALYTICS_ID=$GOOGLE_ANALYTICS_ID >> .env
+        echo GA4_MEASUREMENT_ID=$GA4_MEASUREMENT_ID >> .env
         echo OBJECT2VR_PLAYER=$OBJECT2VR_PLAYER >> .env
 
     - name: Test ✅

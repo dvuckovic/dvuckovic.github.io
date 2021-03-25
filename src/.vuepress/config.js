@@ -44,6 +44,21 @@ module.exports = {
                 href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather+Sans:ital,wght@0,600;1,600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap',
             },
         ],
+        [
+            'script',
+            {
+                async: true,
+                src: `https://www.googletagmanager.com/gtag/js?id=${env.GA4_MEASUREMENT_ID}`,
+            },
+        ],
+        [
+            'script',
+            {},
+            [
+                // eslint-disable-next-line max-len
+                `window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', '${env.GA4_MEASUREMENT_ID}');`,
+            ],
+        ],
     ],
     scss: {
         additionalData: '@import "@/theme/styles/_variables";',
@@ -70,7 +85,7 @@ module.exports = {
         dateFormat: 'YYYY-MM-DD',
         errorTitle: '404',
         errorDescription: 'Tear this ship apart until you find those plans!',
-        ga: true,
+        ga: false,
         seo: true,
         globalPagination: {
             lengthPerPage: 9,
