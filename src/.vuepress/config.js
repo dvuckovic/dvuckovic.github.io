@@ -192,11 +192,6 @@ module.exports = {
                     toggle: 'modal',
                 },
                 {
-                    text: 'Resume',
-                    link: 'https://cdn.dvuckovic.com/downloads/dvuckovic.pdf',
-                    rel: 'nofollow',
-                },
-                {
                     text: 'Privacy',
                     link: '/privacy-policy.md',
                 },

@@ -2,6 +2,7 @@ name: Test & Deploy
 
 # Controls when the action will run.
 #   Triggers the workflow on all pushes & pull requests, except on tag creation.
+#   Additionally, allow workflow to be dispatched on demand.
 on:
   push:
     branches:
@@ -9,6 +10,7 @@ on:
     tags-ignore:
     - '**'
   pull_request:
+  workflow_dispatch:
 
 jobs:
   github_ci:
