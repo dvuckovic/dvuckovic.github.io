@@ -71,6 +71,14 @@ module.exports = {
             },
         },
     },
+    chainWebpack: (config) => {
+        config.module
+            .rule('js')
+            .use('babel-loader')
+            .tap(options => Object.assign(options, {
+                compact: false,
+            }));
+    },
     markdown: {
         anchor: {
             permalinkClass: 'Permalink',
