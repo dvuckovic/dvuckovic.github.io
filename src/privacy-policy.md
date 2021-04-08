@@ -33,12 +33,6 @@ The embedded Google Map on the website sets _3_ cookies known as `NID`, `PREF` a
 
 Further information about handling user data, can be found in [the data protection declaration of Google](https://policies.google.com/privacy).
 
-### Cloudflare Proxy
-
-The Cloudflare proxy service may store a _single_ cookie on your computer when you visit this website. Cloudflare will use this information for the purpose of evaluating your use of the website, compiling reports on website activity and providing other services relating to website activity and internet usage.
-
-Further information about handling user data, can be found in the [Cloudflare Cookie Policy](https://www.cloudflare.com/en-gb/cookie-policy/).
-
 ## Disclaimer
 
 All the information on this website is published in good faith and for general information purpose only. This website does not make any warranties about the completeness, reliability and accuracy of this information. Any action you take upon the information you find on this website is strictly at your own risk. This website will not be liable for any losses and/or damages in connection with the use of this website.
@@ -51,4 +45,4 @@ Please be also aware that when you leave my website, other sites may have differ
 
 By using my website, you hereby consent to this Privacy Policy and the Disclaimer above.
 
-_Last update: 13/02/2021 by Dusan Vuckovic_
+_Last update: 2021-04-08 by Dusan Vuckovic_
