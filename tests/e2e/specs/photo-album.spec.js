@@ -1,6 +1,6 @@
 describe('Photo Album', () => {
     it('renders photo album', () => {
-        cy.visit('/2014/12/25/rome-14/');
+        cy.visit('/2013/10/14/deliblato/');
         cy.get('.PhotoAlbum').as('album');
         cy.get('@album').should('exist');
         cy.get('@album').find('.PhotoAlbum__ModeSwitch').should('exist');
@@ -11,7 +11,8 @@ describe('Photo Album', () => {
     it('renders geotagging map', () => {
         cy.get('.PhotoAlbum__ModeSwitch__Map').click({ force: true });
         cy.get('.vue-map').should('exist');
-        cy.get('div[title="Rome (_MG_8280_1_2.jpg)"]').should('exist');
+        cy.get('div.cluster div').contains(16).click({ force: true });
+        cy.get('div[title="Deliblato (IMG_9879.jpg)"]').should('exist');
         cy.window().then((win) => {
             expect(win.google.maps).to.be.a('object');
         });
