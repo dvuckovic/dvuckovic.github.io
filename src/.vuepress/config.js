@@ -11,7 +11,7 @@ const env = {
 
 module.exports = {
     title: 'Dusan’s Space',
-    description: 'This is fine.',
+    description: 'Testing, testing, testing...',
     base: '/',
     dest: 'dist',
     head: [

@@ -58,7 +58,6 @@ jobs:
       run: npm test
 
     - name: Deploy 🚀
-      if: success() && github.ref == 'refs/heads/main'
       uses: crazy-max/ghaction-github-pages@v2
       with:
         author: Dusan Vuckovic <dusan@dvuckovic.com>
