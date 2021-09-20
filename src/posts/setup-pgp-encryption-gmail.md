@@ -3,6 +3,8 @@ title: Setup PGP Encryption for Gmail
 image: https://cdn.dvuckovic.com/posts/pgp-thunderbird.jpg
 summary: Generate an OpenPGP key entirely in GUI
 date: 2020-12-23
+sticky: true
+weight: 5
 tags:
   - post
   - encryption

@@ -3,6 +3,8 @@ title: Dynamic Component Registration in Vue.js
 image: https://cdn.dvuckovic.com/posts/vue-dynamic-component-registration.jpg
 summary: Keeping tabs on dynamic components in module layers
 date: 2021-02-08
+sticky: true
+weight: 3
 tags:
   - post
   - vue

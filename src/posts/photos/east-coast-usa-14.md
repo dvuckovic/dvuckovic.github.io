@@ -3,6 +3,8 @@ title: East Coast USA
 image: https://cdn.dvuckovic.com/photos/east-coast-usa-14/1_MG_6036_7_8.jpg
 summary: Tour of the three major cities on Eastern Seaboard in June 2014
 date: 2014-06-14
+sticky: true
+weight: 9
 tags:
   - photo
   - digital

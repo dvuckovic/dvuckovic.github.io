@@ -3,6 +3,8 @@ title: Vue Bootstrap Icons
 image: https://cdn.dvuckovic.com/projects/vue-bootstrap-icons.jpg
 summary: A Vue.js component for rendering Bootstrap Icons via the SVG sprite method
 date: 2021-03-12
+sticky: true
+weight: 2
 tags:
   - project
   - vue

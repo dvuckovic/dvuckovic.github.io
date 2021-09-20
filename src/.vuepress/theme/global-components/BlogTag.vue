@@ -24,6 +24,7 @@ export default {
     background: $white;
     font-size: 0.8125rem;
     font-weight: 500;
+    color: $black;
 
     &:hover {
         background: $primary;

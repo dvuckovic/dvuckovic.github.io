@@ -3,6 +3,8 @@ title: Asylum in Serbia
 image: https://cdn.dvuckovic.com/projects/asylum-in-serbia-splash.jpg
 summary: Android help app for refugees seeking asylum in Serbia
 date: 2015-10-07
+sticky: true
+weight: 7
 tags:
   - project
   - android

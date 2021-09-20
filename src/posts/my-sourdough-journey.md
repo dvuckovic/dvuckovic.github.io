@@ -3,6 +3,8 @@ title: My Sourdough Journey
 image: https://cdn.dvuckovic.com/posts/sourdough-header.jpg
 summary: Keeping sanity through the lockdown with the help of natural bacteria & yeasts
 date: 2020-12-30
+sticky: true
+weight: 4
 tags:
   - post
   - sourdough
