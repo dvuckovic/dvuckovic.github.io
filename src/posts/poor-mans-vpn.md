@@ -15,7 +15,7 @@ readingTime: 30 minutes
 
 IPv4 exhaustion is real, wake up sheeple!
 
-Kidding aside, I was utterly surprised to find out that one of my ISPs recently resorted to selling out their assigned IPv4 ranges, probably due to high market prices. I was aware that they yanked static IP addresses for residential customers some time ago, but this was something I could still work around via DDNS daemon. However, in case when not enough IPv4 addresses are available, they switched to Carrier-grade NAT (_CGNAT_) and ruined my day :'(
+Kidding aside, I was utterly surprised to find out that one of my ISPs recently resorted to selling out their assigned IPv4 ranges, probably due to high market prices. I was aware that they yanked static IP addresses for residential customers some time ago, but this was something I could still work around via the DDNS daemon. However, in case when not enough IPv4 addresses are available, they switched to Carrier-grade NAT (_CGNAT_) and ruined my day :'(
 
 ## What the hell is “CGNAT”?
 
@@ -31,7 +31,7 @@ Obviously, as a big proponent of self-hosted services, I was devastated to find 
 
 _CGNAT_ rendered my self-hosted VPN server useless, since it could not be accessed any more. It was reachable only within the original network (let’s call it _LAN 2_).
 
-Luckily, I had a spare VPN server in another network (let’s call it _LAN 1_). In this case, ISP did provide (and obviously charged) a static IP address, so it could be used normally.
+Luckily, I had a spare VPN server in another network (let’s call it _LAN 1_). In this case, ISP **did** provide (and obviously charged) a static IP address, so it could be used normally.
 
 I had to abandon the idea of a VPN server in _LAN 2_, but I was able to switch to a VPN client that would connect to _LAN 1_ via its VPN server. [OpenVPN] provides both server/client functionality, so it was easy to disable the server service and setup a client profile.
 
@@ -64,7 +64,7 @@ To guarantee that the resultant VPN server in _LAN 1_ was not compromised in any
 remote-cert-tls server
 ```
 
-Since I had set up authentication on _LAN 1_ VPN server, I had to make this process automatic so the service can work in a headless environment. To do this, first I created a separate user on the VPN server, with its own password. This information can be stored in a file with `/etc/openvpn/<vpn-name>.auth` which has the following structure:
+Since I had set up the authentication on _LAN 1_ VPN server, I had to make this process automatic so the service can work in a headless environment. To do this, first I created a separate user on the VPN server, with its own, strong password. This information can be stored in a file with `/etc/openvpn/<vpn-name>.auth` which has the following structure:
 
 ```
 <username>
@@ -80,7 +80,7 @@ auth-nocache
 
 ### Making VPN Connection Persistent
 
-If everything was set up correctly, now it would be possible to start the connection to _LAN 1_ via `systemd`:
+If everything was set up correctly, now it should be possible to start the connection to _LAN 1_ via `systemd`:
 
 ```shell
 systemctl start openvpn@<vpn-name>
@@ -91,6 +91,8 @@ At this point, connection can be tested by inspecting assigned IP address from t
 ```shell
 systemctl enable openvpn@<vpn-name>
 ```
+
+I even tried to disconnect the client right on the server, it simply reconnected automagically some seconds later. _Cool!_
 
 ## Routing Requests
 
@@ -116,9 +118,7 @@ Where `<interface>` is the correct network interface name, e.g. `Ethernet`. You 
 networksetup -listallnetworkservices
 ```
 
-The routes are easily set up on modern OSs, with notable exception for mobile devices, e.g. Android. Since it requires root permissions, we must think out of box and set up the route in a different way.
-
-I found that the easiest way would be to connect the mobile device to the same VPN network, and the routes are set up automatically. Note that in this case VPN must _NOT_ isolate its clients, allowing internal connections.
+The routes are easily set up on modern OSs, with notable exception for mobile devices, e.g. Android. Since it requires root permissions, we must think out of box and set up the route in a different way. I found that the easiest way would be to connect the mobile device to the same VPN network, and the routes are set up automatically. Note that in this case VPN must _NOT_ isolate its clients, allowing internal connections.
 
 ## Local Port Tunnelling via SSH
 
@@ -129,18 +129,27 @@ First, you need to know the IP address of the target service, in my case it was 
 On a server in _LAN 1_, a local port tunnel can be created with the following command:
 
 ```shell
-ssh -L 631:192.168.0.15:631 <user>@<server>
+$ ssh -o LogLevel=VERBOSE -N -L 6631:192.168.0.15:631 <user>@<server>
+Authenticated to <server> ([<server>]:22).
 ```
 
-Where `<user>@<server>` a valid SSH user for the server in _LAN 2_. This opens a port `631` on `localhost` or `127.0.0.1`, which forwards to the target service.
+Where:
+* `-o LogLevel=VERBOSE` activates some logging, so you can be sure the tunnel is working
+* `-N` switch means there will be no additional command execution, hiding the remote prompt
+* `<user>@<server>` a valid SSH user for the server in _LAN 2_.
 
-Or, in case you want it accessible by other machines in _LAN 1_, which do not necessarily have the route to _LAN 2_ (i.e. mobile devices), you can bind it to the interface IP, let’s say `192.168.1.18`:
+This command opens a port `6631` on `localhost` or `127.0.0.1`, which forwards to the target service on port `631`. Higher local port numbers are advised if you intend to run the command under normal user. Otherwise, you might need to prepend the command with `sudo`.
+
+Or, in case you want the tunnel accessible by other machines in _LAN 1_, which do not necessarily have the route to _LAN 2_ (i.e. mobile devices), you can bind it to the interface IP, let’s say `192.168.1.18`:
 
 ```shell
-ssh -L 192.168.1.18:631:192.168.0.15:631 <user>@<server>
+$ ssh -o LogLevel=VERBOSE -N -L 192.168.1.18:6631:192.168.0.15:631 <user>@<server>
+Authenticated to <server> ([<server>]:22).
 ```
 
-In this case, the _LAN 2_ service will now be available in _LAN 1_ via `192.168.1.18:631`, and any device in _LAN 1_ should be able to access it.
+In this case, the _LAN 2_ service will now be available in _LAN 1_ via `192.168.1.18:6631`, and any device in _LAN 1_ should be able to access it.
+
+To close the tunnel, simply press _Ctrl+C_.
 
 ## Web Browsing
 
@@ -153,7 +162,8 @@ First, we need to set up the system to use the SOCKS proxy on the local port, le
 Then, to actually create the tunnel, simply open the connection to the server in _LAN 2_:
 
 ```shell
-ssh -D 1337 -C -N <user>@<server>
+$ ssh -o LogLevel=VERBOSE -N -C -D 1337 <user>@<server>
+Authenticated to <server> ([<server>]:22).
 ```
 
 Afterwards, all web requests should just try to use the system settings for proxy, most probably this is already the case in your web browser if you didn’t modify its network settings. If you try to determine the external IP address, it should be _External IP 2_!
@@ -194,7 +204,7 @@ trap control_c INT
 
 echo Running proxy tunnel...
 
-ssh -D 1337 -C -N <user>@<server>
+ssh -o LogLevel=VERBOSE -N -C -D 1337 <user>@<server>
 ```
 
 Where `<interface>` is the correct network interface name, e.g. `Ethernet`, and `<user>@<server>` a valid SSH user for the server in _LAN 2_.

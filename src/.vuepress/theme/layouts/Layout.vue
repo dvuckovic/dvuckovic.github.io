@@ -204,5 +204,11 @@
             border: 1px solid $davys;
         }
     }
+
+    blockquote {
+        padding-left: 0.75rem;
+        border-left: 7px solid $spanish;
+        color: $battleship;
+    }
 }
 </style>

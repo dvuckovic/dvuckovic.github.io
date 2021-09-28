@@ -415,7 +415,6 @@ export default {
             padding-left: 0.75rem;
             border-left: 7px solid $spanish;
             color: $battleship;
-            font-size: 1.1rem;
         }
     }
 }
