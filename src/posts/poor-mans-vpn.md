@@ -1,6 +1,6 @@
 ---
 title: Poor Man’s VPN
-image: https://cdn.dvuckovic.com/posts/poor-mans-vpn_header.png
+image: https://cdn.dvuckovic.com/posts/poor-mans-vpn_header.jpg
 summary: Reliable server access to local networks behind CGNAT
 date: 2021-09-20
 sticky: true
@@ -28,6 +28,8 @@ The end result is very simple: multiple households will share an external IP add
 Obviously, as a big proponent of self-hosted services, I was devastated to find this out, especially since it was not communicated in a proper way: it just stopped working one day, without any explanation.
 
 ## VPN to the Rescue
+
+![Poor Man’s VPN](https://cdn.dvuckovic.com/posts/poor-mans-vpn_schematic.png)
 
 _CGNAT_ rendered my self-hosted VPN server useless, since it could not be accessed any more. It was reachable only within the original network (let’s call it _LAN 2_).
 
