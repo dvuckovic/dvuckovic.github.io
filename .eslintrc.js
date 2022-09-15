@@ -11,6 +11,9 @@ module.exports = {
     parserOptions: {
         parser: 'babel-eslint',
     },
+    globals: {
+        grecaptcha: true,
+    },
     rules: {
 
         /*

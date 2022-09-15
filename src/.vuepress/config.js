@@ -182,9 +182,13 @@ module.exports = {
         ],
         emailModal: {
             title: 'Hey there!',
+            intro: 'The best way to get in touch with me directly is to drop me an email:',
+            reveal: 'Reveal email address',
             // eslint-disable-next-line max-len
-            body: '<p>The best way to get in touch with me directly is to drop me an email.</p>\n<p>My email address is my <strong>given name</strong> at this website.</p>\n<p><em>If you want to send me a secure message, you can get <a href="https://cdn.dvuckovic.com/downloads/dvuckovic.crt" class="NavLink NavLink--PublicKey" download>my S/MIME certificate</a>.</em></p><p><small><em>Or, if you prefer PGP, get <a href="https://cdn.dvuckovic.com/downloads/dvuckovic.pub" class="NavLink NavLink--PublicKey" download>my public key</a>.</em></small></p>',
+            keys: '<small><em>If you want to send me a secure message, you can get <a href="https://cdn.dvuckovic.com/downloads/dvuckovic.crt" class="NavLink NavLink--PublicKey" download>my S/MIME certificate</a>. Or, if you prefer PGP, get <a href="https://cdn.dvuckovic.com/downloads/dvuckovic.pub" class="NavLink NavLink--PublicKey" download>my public key</a>.</em></small>',
             button: 'Got it!',
+            error: 'There was an error retrieving email address, please try again later.',
+            retry: 'Retry',
         },
         footer: {
             copyright: [

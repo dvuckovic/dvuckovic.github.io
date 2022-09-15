@@ -165,6 +165,10 @@ h6 {
     }
 }
 
+.grecaptcha-badge {
+    display: none !important;
+}
+
 @keyframes pulse-color {
     0% {
         background-color: $secondary;

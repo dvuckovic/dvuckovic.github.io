@@ -77,13 +77,42 @@ describe('Homepage', () => {
         cy.get('a[href="#email-modal"]').scrollIntoView().click({ force: true });
         cy.get('div#email-modal').should('be.visible');
         cy.get('div.modal-header').contains('h2', themeConfig.emailModal.title);
+        cy.get('div.modal-body p').contains(themeConfig.emailModal.intro);
+        cy.get('div.modal-body button').as('reveal-button').contains(themeConfig.emailModal.reveal);
         cy.get('div.modal-footer button').contains(themeConfig.emailModal.button);
-        cy.get('div.modal-body a.NavLink--PublicKey').should('have.length', 2);
 
-        const strippedBody = themeConfig.emailModal.body.replace(/(<([^>]+)>)/gi, '');
-        strippedBody.split('\n').forEach((bodyLine) => {
-            cy.get('div.modal-body').contains(bodyLine);
+        cy.intercept('POST', 'https://www.google.com/recaptcha/api2/*', {
+            statusCode: 200,
+            fixture: 'google/recaptcha.json',
         });
+
+        cy.intercept('POST', '/api/reveal', {
+            statusCode: 405,
+        }).as('reveal-error');
+
+        cy.get('@reveal-button').click();
+
+        cy.wait('@reveal-error');
+
+        cy.get('div.modal-body p').contains(themeConfig.emailModal.error);
+        cy.get('div.modal-body button').as('retry-button').contains(themeConfig.emailModal.retry);
+
+        cy.get('@retry-button').click();
+
+        cy.get('div.modal-body button').as('reveal-button').contains(themeConfig.emailModal.reveal);
+
+        cy.intercept('POST', '/api/reveal', {
+            statusCode: 200,
+            fixture: 'api/reveal/200.json',
+        }).as('reveal-success');
+
+        cy.get('@reveal-button').click();
+
+        cy.wait('@reveal-success');
+
+        cy.get('div.modal-body a').contains('user@host.tld').and('have.attr', 'href', 'mailto:user@host.tld');
+        cy.get('div.modal-body p').contains(themeConfig.emailModal.keys.replace(/(<([^>]+)>)/gi, ''));
+        cy.get('div.modal-body a.NavLink--PublicKey').should('have.length', 2);
 
         // To properly wait for the modal to close, we have to pipe the click and continue clicking until it works.
         //   In some test runs, the runner will try to click 17 times on the button, until it works!
