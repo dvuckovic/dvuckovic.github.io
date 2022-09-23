@@ -85,7 +85,9 @@ The entire schedule I had in the first 8 days is given in the table below. Note 
 ![Sourdough Starter](https://cdn.dvuckovic.com/posts/sourdough-3.jpg#half)
 ![Sourdough Starter](https://cdn.dvuckovic.com/posts/sourdough-4.jpg#half)
 
-After all of this, I had another starter with predictable rise & fall after each feeding phase. After suitably naming it, I settled into a weekly schedule where I would:
+## Feeding schedule
+
+Finally, I had another starter with predictable rise & fall after each feeding phase. After suitably naming it, I settled into a weekly schedule where I would:
 
 * take out the starter from the fridge on _Thursday_ afternoon
 * refresh it with the fresh flour every _12_ hours and keep monitoring it
