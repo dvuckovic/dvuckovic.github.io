@@ -11,7 +11,7 @@ VuePress instance for the website [Dusan’s Space](https://dvuckovic.com).
 ### Dependencies
 
 ```sh
-npm install --no-save
+npm install --no-save --legacy-peer-deps
 ```
 
 ### Setup Environment
