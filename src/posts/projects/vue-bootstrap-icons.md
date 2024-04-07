@@ -33,7 +33,7 @@ For sure, this is the best option, but only when you can afford it. Again, what 
 
 Naturally, I decided to create my own component, and try to package and publish it to the [NPM](https://www.npmjs.com) at the same time, so it can easily be used across different projects. The results can be found in two packages, for each Vue flavor of your choice:
 
-* [@dvuckovic/vue-bootstrap-icons](https://www.npmjs.com/package/@dvuckovic/vue-bootstrap-icons) (Vue 2)
+* ~~[@dvuckovic/vue-bootstrap-icons](https://www.npmjs.com/package/@dvuckovic/vue-bootstrap-icons)~~ (Vue 2, deprecated 2024-04-07)
 * [@dvuckovic/vue3-bootstrap-icons](https://www.npmjs.com/package/@dvuckovic/vue3-bootstrap-icons) (Vue 3)
 
 ### Install
@@ -41,80 +41,59 @@ Naturally, I decided to create my own component, and try to package and publish 
 To install the library, you can execute the following command in your project folder:
 
 ```sh
-npm install --save-prod @dvuckovic/vue-bootstrap-icons
+npm install @dvuckovic/vue3-bootstrap-icons bootstrap-icons
 # or
-npm install --save-prod @dvuckovic/vue3-bootstrap-icons
+yarn add @dvuckovic/vue3-bootstrap-icons bootstrap-icons
 ```
 
 ### Usage
 
-Before the use, register the component either globally or locally in Vue 2:
+Before the use, register the component globally and inject Bootstrap Icons SVG sprites into the DOM:
 
 ```js
-import Vue from 'vue';
-import BootstrapIcon from '@dvuckovic/vue-bootstrap-icons';
+import { createApp } from 'vue'
+import App from './App.vue'
+import { BootstrapIcon } from '@dvuckovic/vue3-bootstrap-icons'
+import { injectBootstrapIcons } from '@dvuckovic/vue3-bootstrap-icons/utils'
+import BootstrapIcons from 'bootstrap-icons/bootstrap-icons.svg?raw'
+import '@dvuckovic/vue3-bootstrap-icons/dist/style.css'
+
+injectBootstrapIcons(BootstrapIcons)
+
+const app = createApp(App)
 
 // Global component registration.
-Vue.component('BootstrapIcon', BootstrapIcon);
+app.component('BootstrapIcon', BootstrapIcon)
 
-// Or...
+app.mount('#app')
 
-export default {
-    components: {
-        // Local component registration.
-        BootstrapIcon,
-    },
-};
-```
+// Or for the local usage in a component...
 
-For Vue 3, the registration is slightly different:
-
-```js
-import Vue from 'vue';
-import BootstrapIcon from '@dvuckovic/vue3-bootstrap-icons';
-
-const app = Vue.createApp({});
-
-// Global component registration.
-app.component('BootstrapIcon', BootstrapIcon);
-
-app.mount('#app);
-
-// Or...
-
-import { defineComponent } from 'vue';
-import BootstrapIcon from '@dvuckovic/vue3-bootstrap-icons';
-
-export default defineComponent({
-    components: {
-        // Local component registration.
-        BootstrapIcon,
-    },
-});
+import { BootstrapIcon } from '@dvuckovic/vue3-bootstrap-icons'
 ```
 
 Then, simply include the following code in the template:
 
 ```vue live
 <BootstrapIcon
-    icon="bootstrap-fill"
-    variant="light"
-    size="3x" />
+  icon="bootstrap-fill"
+  variant="light"
+  size="3x" />
 ```
 
 Icons are rendered according to the name passed via the `icon` prop, you can consult [the official docs](https://icons.getbootstrap.com/#icons) for their valid _kebab-names_.
 
-Above I included only some props, for a full list of possibilities you can check out [the readme file](https://github.com/dvuckovic/vue-bootstrap-icons#props). Feel free to play around with the example above, it’s _live_ code!
+Above I included only some props, for a full list of possibilities you can check out [the readme file](https://github.com/dvuckovic/vue3-bootstrap-icons#props). Feel free to play around with the example above, it’s _live_ code!
 
-The code above assumes normal ES module environment, but for more options like SSR & IIFE make sure to check the readme too.
+The package ships in both ES and CJS flavors, and is fully TypeScript compatible!
 
 ### Problems and New Features
 
-If you find any problems or want to propose new features, feel free to submit an issue or a pull request on Github. Note that there are two flavors of the package, make sure to cater to both:
+If you find any problems or want to propose new features, feel free to submit an issue or a pull request on Github.
 
-* [vue-bootstrap-icons](https://github.com/dvuckovic/vue-bootstrap-icons)
+* ~~[vue-bootstrap-icons](https://github.com/dvuckovic/vue-bootstrap-icons)~~ (archived 2024-04-07)
 * [vue3-bootstrap-icons](https://github.com/dvuckovic/vue3-bootstrap-icons)
 
 ## Source Code
 
-Complete source code for this component was written in Vue.js and bundled via [rollup](https://vuejs.org/v2/cookbook/packaging-sfc-for-npm.html). Source code is released under the [WTFPL license](http://www.wtfpl.net/).
+Complete source code for this component was written in Vue.js 3 composition API and bundled via Vite. Source code is released under the [WTFPL license](http://www.wtfpl.net/).
