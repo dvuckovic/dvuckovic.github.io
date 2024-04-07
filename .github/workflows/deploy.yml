@@ -59,7 +59,7 @@ jobs:
     - name: Summary 📝
       if: always()
       run: |
-        cat JEST_RESULTS.md >> $GITHUB_STEP_SUMMARY
+        cat test-results.md >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         cat CYPRESS_RESULTS.md >> $GITHUB_STEP_SUMMARY
