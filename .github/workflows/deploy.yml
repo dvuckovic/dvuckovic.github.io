@@ -34,7 +34,7 @@ jobs:
         path: |
           ~/.npm
           ~/.cache
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
 
     - name: Install 📦
       run: npm ci --legacy-peer-deps
