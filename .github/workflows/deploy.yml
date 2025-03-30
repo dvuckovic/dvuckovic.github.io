@@ -70,8 +70,9 @@ jobs:
 
     - name: Deploy 🚀
       if: github.ref == 'refs/heads/main'
-      uses: cloudflare/wrangler-action@2.0.0
+      uses: cloudflare/wrangler-action@v3
       with:
         apiToken: ${{ secrets.CF_API_TOKEN }}
         accountId: ${{ secrets.CF_ACCOUNT_ID }}
-        command: pages publish --project-name=dvuckovic-com --commit-dirty=true dist
+        command: pages deploy dist --project-name=dvuckovic-com --commit-dirty=true
+        wranglerVersion: "3.90.0"
